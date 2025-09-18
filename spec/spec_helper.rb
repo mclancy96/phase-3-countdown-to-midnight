@@ -15,13 +15,13 @@ RSpec.configure do |config|
   #     --seed 1234
 
   def capture_stdout(&block)
-  original_stdout = $stdout
-  $stdout = fake = StringIO.new
-  begin
-    yield
-  ensure
-    $stdout = original_stdout
+    original_stdout = $stdout
+    $stdout = fake = StringIO.new
+    begin
+      yield
+    ensure
+      $stdout = original_stdout
+    end
+    fake.string
   end
-  fake.string
-end
 end

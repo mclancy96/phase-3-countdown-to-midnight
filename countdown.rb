@@ -1,4 +1,3 @@
-#write your code here
+# write your code here
 
-def countdown
-end
+def countdown; end
